@@ -1,3 +1,5 @@
+import { ajax } from 'rxjs/ajax';
+
 export const TEACHERS = [
   { id: 'T78946',
     name: 'Michael Jonas',
@@ -14,3 +16,12 @@ export const TEACHERS = [
     specialistFields: ['Physics', 'Zoology']
   }
 ];
+
+export class TeacherData {
+  public getAllTeachers() {
+/*    const result = [];
+    const getTeacher = ajax('http://5d7e077fd756030014184069.mockapi.io/teacher');
+    getTeacher.subscribe(res => result.push(res.response));*/
+    return TEACHERS;
+  }
+}

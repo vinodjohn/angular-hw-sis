@@ -1,14 +1,15 @@
-import { Component, Input, ViewChild, ElementRef} from '@angular/core';
+import {Component, ViewChild, ElementRef, OnInit} from '@angular/core';
 import {Student} from './model/student';
 import {Utils} from '../commons/utils';
+import {StudentData} from './data/studentData';
 
 @Component({
   selector: 'app-student',
   templateUrl: './student.component.html',
   styleUrls: ['./student.component.css']
 })
-export class StudentComponent {
-  @Input() students: [Student];
+export class StudentComponent implements OnInit {
+  students = [];
   @ViewChild('closeNewStudentModal', {static: false}) closeNewStudentModal: ElementRef;
 
   onSubmit(f) {
@@ -20,5 +21,10 @@ export class StudentComponent {
       utilsInstance.getSchoolName(f.value.school), Number(f.value.grade)));
 
     this.closeNewStudentModal.nativeElement.click();
+  }
+
+  ngOnInit(): void {
+    const studentDataInstance = new StudentData();
+    this.students = studentDataInstance.getAllStudents();
   }
 }

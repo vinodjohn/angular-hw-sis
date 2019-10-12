@@ -7,6 +7,28 @@ import { TeacherComponent } from './teacher/teacher.component';
 import { StudentComponent } from './student/student.component';
 import {FormsModule} from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {LoginModule} from '../login/login.module';
+import {RouterModule, Routes} from '@angular/router';
+
+const appRoutes: Routes = [
+  {
+    path: 'home',
+    component: AppComponent
+  },
+  {
+    path: 'teacher',
+    component: TeacherComponent
+  },
+  {
+    path: 'student',
+    component: StudentComponent
+  },
+  {
+    path: '',
+    redirectTo : 'home',
+    pathMatch : 'full'
+  }
+];
 
 @NgModule({
   declarations: [
@@ -18,8 +40,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    LoginModule,
+    RouterModule.forChild(appRoutes)
   ],
+  exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })

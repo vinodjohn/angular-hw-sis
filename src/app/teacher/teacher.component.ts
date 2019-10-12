@@ -1,15 +1,21 @@
-import {Component, Input, ViewChild, ElementRef} from '@angular/core';
+import {Component, ViewChild, ElementRef, OnInit} from '@angular/core';
 import {Teacher} from './model/teacher';
 import {Utils} from '../commons/utils';
+import {TeacherData} from './data/teacherData';
 
 @Component({
   selector: 'app-teacher',
   templateUrl: './teacher.component.html',
   styleUrls: ['./teacher.component.css']
 })
-export class TeacherComponent {
-  @Input() teachers: [Teacher];
+export class TeacherComponent implements OnInit {
+  teachers = [];
   @ViewChild('closeNewTeacherModal', {static: false}) closeNewTeacherModal: ElementRef;
+
+  ngOnInit(): void {
+    const teacherDataInstance = new TeacherData();
+    this.teachers = teacherDataInstance.getAllTeachers();
+  }
 
   onSubmit(f) {
     const utilsInstance = new Utils();

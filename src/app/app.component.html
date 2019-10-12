@@ -4,6 +4,9 @@
   </ol>
 </nav>
 
-<app-teacher [teachers]="teachers"></app-teacher>
-<app-student [students]="students"></app-student>
+<nav>
+  <a routerLink="/teacher" routerLinkActive="active">Teacher</a>
+  <a routerLink="/student" routerLinkActive="active">Student</a>
+</nav>
+
 <router-outlet></router-outlet>

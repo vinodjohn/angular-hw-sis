@@ -7,3 +7,9 @@ export const STUDENTS = [
     grade: 9
   }
 ];
+
+export class StudentData {
+  public getAllStudents() {
+    return STUDENTS;
+  }
+}
