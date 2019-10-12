@@ -9,12 +9,9 @@ import {FormsModule} from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {LoginModule} from '../login/login.module';
 import {RouterModule, Routes} from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
 
 const appRoutes: Routes = [
-  {
-    path: 'home',
-    component: AppComponent
-  },
   {
     path: 'teacher',
     component: TeacherComponent
@@ -22,11 +19,6 @@ const appRoutes: Routes = [
   {
     path: 'student',
     component: StudentComponent
-  },
-  {
-    path: '',
-    redirectTo : 'home',
-    pathMatch : 'full'
   }
 ];
 
@@ -41,6 +33,7 @@ const appRoutes: Routes = [
     AppRoutingModule,
     FormsModule,
     NgbModule,
+    HttpClientModule,
     LoginModule,
     RouterModule.forChild(appRoutes)
   ],

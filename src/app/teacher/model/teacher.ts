@@ -1,7 +1,7 @@
 import {Utils} from '../../commons/utils';
 
 export class Teacher {
-  id: string;
+  teacherId: string;
   name: string;
   joinDate: Date;
   isActive: boolean;
@@ -10,7 +10,7 @@ export class Teacher {
 
   constructor(name, joinDate, isActive, school, specialistFields) {
     const utilsInstance = new Utils();
-    this.id = 'T' + utilsInstance.getRandomId();
+    this.teacherId = 'T' + utilsInstance.getRandomId();
     this.name = name;
     this.joinDate = joinDate;
     this.isActive = isActive;

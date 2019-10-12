@@ -18,7 +18,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let teacher of teachers">
-            <th scope="row">{{ teacher.id }}</th>
+            <th scope="row">{{ teacher.teacherId }}</th>
             <td>{{ teacher.name}}</td>
             <td>{{ teacher.joinDate | date: "longDate"}}</td>
             <td>{{ teacher.school }}</td>
