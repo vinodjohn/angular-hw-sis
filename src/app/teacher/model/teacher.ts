@@ -8,7 +8,7 @@ export class Teacher {
   school: string;
   specialistFields: string[];
 
-  constructor(name, joinDate, isActive, school, specialistFields){
+  constructor(name, joinDate, isActive, school, specialistFields) {
     const utilsInstance = new Utils();
     this.id = 'T' + utilsInstance.getRandomId();
     this.name = name;

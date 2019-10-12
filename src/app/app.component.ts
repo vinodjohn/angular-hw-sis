@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {TEACHERS} from './student/data/studentData';
-import {STUDENTS} from './teacher/data/teacherData';
+import {TEACHERS} from './teacher/data/teacherData';
+import {STUDENTS} from './student/data/studentData';
 
 @Component({
   selector: 'app-root',
