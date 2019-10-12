@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {Student} from '../model/student';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class StudentService {
       return this.httpClient.get(this.STUDENT_API_URL);
   }
 
-  public createStudent(student) {
-    this.httpClient.post(this.STUDENT_API_URL, student);
+  public createStudent(student: Student) {
+    this.httpClient.post<Student>(this.STUDENT_API_URL, student).subscribe();
   }
 }

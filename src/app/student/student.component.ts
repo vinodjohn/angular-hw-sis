@@ -29,6 +29,6 @@ export class StudentComponent implements OnInit {
       utilsInstance.getSchoolName(f.value.school), Number(f.value.grade)));
 
     this.closeNewStudentModal.nativeElement.click();
-    this.ngOnInit();
+    setTimeout('location.reload();', 2000);
   }
 }

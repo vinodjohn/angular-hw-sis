@@ -30,7 +30,7 @@ export class TeacherComponent implements OnInit {
       utilsInstance.getSchoolName(f.value.school), this.getSpeciliazedFields(f.value.fields)));
 
     this.closeNewTeacherModal.nativeElement.click();
-    this.ngOnInit();
+    setTimeout('location.reload();', 2000);
   }
 
   getSpeciliazedFields(fieldsArr) {
