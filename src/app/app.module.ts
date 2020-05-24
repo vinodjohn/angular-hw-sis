@@ -10,6 +10,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {LoginModule} from '../login/login.module';
 import {RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
+import { SchoolComponent } from './school/school.component';
 
 const appRoutes: Routes = [
   {
@@ -26,7 +27,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     TeacherComponent,
-    StudentComponent
+    StudentComponent,
+    SchoolComponent
   ],
   imports: [
     BrowserModule,
